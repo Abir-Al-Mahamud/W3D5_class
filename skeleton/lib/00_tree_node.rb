@@ -17,5 +17,8 @@ class PolyTreeNode
         new_node.children << self if !@parent.nil?
     end
 
+    # def
+    
+
     
 end
