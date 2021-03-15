@@ -52,21 +52,16 @@ class PolyTreeNode
     end
 
     def bfs(target)
-        arr = [self]
-        lvl = arr.shift
-        # debugger
-        while !arr.empty?
-            # debugger
-            if arr[0] == target 
-                return arr[0]
+        que = [self]
+
+        while !que.empty?
+            if que.first.value == target
+                return que.first
             end
-            arr.concat(lvl.children)
+            old_ele = que.shift
+            que.concat(old_ele.children)
         end
         nil
     end 
-
     
 end
-
-# b = PolyTreeNode.new('b')
-# p dfs('b', 5)
